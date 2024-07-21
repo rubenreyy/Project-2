@@ -1,5 +1,42 @@
 <%- include("reusables/header"); -%>
-<div class="container-fluid">
-<h1>My name is <%= name %></h1>
+<div class="container my-4">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="page-title">Sports Dashboard</h1>
+        </div>
+    </div>
+    <div class="row my-4">
+
+        
+        <div class="col-12 col-md-4">
+            <h3 class="sport-title">NFL</h3>
+            <% nflNews.forEach(news => { %>
+                <div class="news-block custom-bg text-white mb-3">
+                    <h5><%= news.title %></h5>
+                    <p><%= news.summary %></p>
+                </div>
+            <% }) %>
+        </div>
+
+        <div class="col-12 col-md-4">
+            <h3 class="sport-title">NBA</h3>
+            <% nbaNews.forEach(news => { %>
+                <div class="news-block custom-bg text-white mb-3">
+                    <h5><%= news.title %></h5>
+                    <p><%= news.summary %></p>
+                </div>
+            <% }) %>
+        </div>
+
+        <div class="col-12 col-md-4">
+            <h3 class="sport-title">MLB</h3>
+            <% mlbNews.forEach(news => { %>
+                <div class="news-block custom-bg text-white mb-3">
+                    <h5><%= news.title %></h5>
+                    <p><%= news.summary %></p>
+                </div>
+            <% }) %>
+        </div>
+    </div>
 </div>
 <%- include("reusables/footer"); -%>

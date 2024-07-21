@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "watch": "nodemon app.js -e ejs,js",
-    "app":"node app.js"
+    "app": "node app.js"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +16,5 @@
     "nodemon": "^3.1.4",
     "watch": "^1.0.2"
   },
-  "description": ""
+  "description": "- by Chris Nastasi, Ruben Reyes, & David Abundis"
 }

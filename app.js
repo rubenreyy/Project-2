@@ -2,6 +2,33 @@ const express = require('express')
 const bodyParser = require("body-parser")
 const ejs = require('ejs')
 
+// Mock function to fetch stats, replace with actual database or API calls
+const fetchStats = (league) => {
+  return {
+      allTeams: `${league} All Team Stats`,
+      topPlayers: `${league} Top Player Stats`,
+      team1: `${league} #1 Team Stats`,
+      team1Players: `${league} #1 Team Player Stats`
+  };
+};
+
+/* const fetchRecentNews = async (sport) => {
+  try {
+      const response = await axios.get(`https://api.example.com/news/${sport}`);
+      return response.data;
+  } catch (error) {
+      console.error(`Error fetching ${sport} news:`, error);
+      return [];
+  }
+}; */
+
+const placeholderNews = [
+  { title: "Recent News 1", summary: "Summary for recent news 1." },
+  { title: "Recent News 2", summary: "Summary for recent news 2." },
+  { title: "Recent News 3", summary: "Summary for recent news 3." }
+];
+
+
 const app = express()
 app.set('view engine', 'ejs')
 
@@ -11,21 +38,38 @@ app.use('/public', express.static('public'));
 
 const port = 5500
 
-app.get('/', (req, res) => {
-res.render('home', {name: 'no'});
-})
+
+app.get('/', async (req, res) => {
+  /* try {
+      const nflNews = await fetchRecentNews('nfl');
+      const nbaNews = await fetchRecentNews('nba');
+      const mlbNews = await fetchRecentNews('mlb');
+      res.render('dashboard', { nflNews, nbaNews, mlbNews });
+  } catch (error) {
+      res.status(500).send('Error fetching news data');
+  }*/
+
+      res.render('home', { 
+        nflNews: placeholderNews, 
+        nbaNews: placeholderNews, 
+        mlbNews: placeholderNews 
+    });
+});
 
 app.get('/nfl', (req, res) => {
-  res.render('nfl', {name: 'nfl'});
-})
+  const stats = fetchStats('NFL');
+  res.render('nfl', { stats });
+});
 
 app.get('/nba', (req, res) => {
-  res.render('nba', {name: 'no'});
-})
+  const stats = fetchStats('NBA');
+  res.render('nba', { stats });
+});
 
 app.get('/mlb', (req, res) => {
-  res.render('mlb', {name: 'no'});
-})
+  const stats = fetchStats('MLB');
+  res.render('mlb', { stats });
+});
 
 app.get('/search', (req, res) => {
   const query = req.query.q.toLowerCase();

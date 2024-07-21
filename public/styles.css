@@ -1,36 +1,37 @@
 html, body {
     height: 100%;
     margin: 0;
-    background-color: rgb(240, 169, 111);
-    font-family: Arial, sans-serif;
+    background-color: rgb(83, 60, 60);
+    font-family: 'Bebas Neue', Arial, sans-serif;
     text-align: center;
+    color: rgb(255, 255, 255)
 }
 
-
 .container-fluid {
-    padding-top: 70px;
-    padding-bottom: 70px;
-    background-color: rgb(240, 169, 111);
+    padding: 70px 0;
+    background-color: rgb(83, 60, 60);
 }
 
 .navbar {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 15px 0;
     border: 0;
     border-radius: 0;
     margin-bottom: 0;
-    font-size: 12px;
-    letter-spacing: 5px;
-    background-color: #2349af;
+    background-color: #343a40; /* Combined custom-navbar background color */
 }
 
 .navbar-brand,
 .navbar-nav > li > a {
     color: #fff !important;
+    font-size: 25px; /* Ensuring all header text is 25px */
 }
 
 .navbar-nav li a:hover {
-    color: rgb(240, 169, 111) !important;
+    color: rgb(83, 60, 60) !important;
+}
+
+.nav-link:hover {
+    color: #f8f9fa !important; /* Combined hover color */
 }
 
 .footer-padding {
@@ -44,20 +45,65 @@ html, body {
     left: 0;
     width: 100%;
     height: 60px;
-    background-color: #2349af;
+    background-color: #343a40;
 }
 
 .footer p {
     margin-top: 20px;
     font-size: 20px;
-    color: rgb(255, 255, 255);
+    color: #fff;
 }
 
-input[type="text"] {
-    padding: 10px;
-    width: 200px;
+.custom-bg {
+    background-color: #343a40;
 }
 
-button {
+.page-title {
+    font-family: 'Bebas Neue', Arial, sans-serif;
+    font-size: 4em;
+    color: #ffffff;
+    text-transform: uppercase;
+    background-color: #343a40;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    width: 300px;
     padding: 10px;
+    border: 2px solid #343a40;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #343a40;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #495057;
+}
+
+.sport-title {
+    font-family: 'Bebas Neue', Arial, sans-serif;
+    font-size: 2em;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.news-block {
+    padding: 15px;
+    border-radius: 5px;
 }

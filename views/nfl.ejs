@@ -1,38 +1,95 @@
 <%- include("reusables/header"); -%>
-<h1>My nfl is <%= name %></h1>
 <body>
-    <%- include ("reusables/search"); -%>
+    <div class="container my-4">
+        <div class="row align-items-center">
+            <div class="col-12 text-center">
+                <h1 class="page-title">NFL</h1>
+            </div>
+        </div>
+        <div class="search-bar my-4">
+            <%- include("reusables/search"); -%>
+        </div>
 
-    <div
-        class="container my-1"
-        
-    >
-        <div class="row row-cols-2 g-2 g-lg-3">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="card custom-bg text-white">
+                    <div class="card-header">
+                        <h3>All Team Stats</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Click to view all team stats.</p>
+                        <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAllTeams" aria-expanded="false" aria-controls="collapseAllTeams">
+                            Show Stats
+                        </button>
+                        <div class="collapse mt-2" id="collapseAllTeams">
+                            <div class="card card-body bg-light text-dark">
+                                <p>All team stats content goes here. Placeholder content for demonstration purposes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            <div class="col border-3 border-white shadow bg-dark-subtle gx-1">
-                <h3>All Team Stats</h3>
-                <p>hello</p>
+            <div class="col">
+                <div class="card custom-bg text-white">
+                    <div class="card-header">
+                        <h3>Top Player Stats</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Click to view top player stats.</p>
+                        <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTopPlayers" aria-expanded="false" aria-controls="collapseTopPlayers">
+                            Show Stats
+                        </button>
+                        <div class="collapse mt-2" id="collapseTopPlayers">
+                            <div class="card card-body bg-light text-dark">
+                                <p>Top player stats content goes here. Placeholder content for demonstration purposes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col border-3 border-white shadow bg-dark-subtle gx-1">
-                <h3>Top Player Stats</h3>
-                <p>where the top player stats will go</p>
-    
+
+            <div class="col">
+                <div class="card custom-bg text-white">
+                    <div class="card-header">
+                        <h3>#1 Team Stats</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Click to view #1 team stats.</p>
+                        <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTeam1" aria-expanded="false" aria-controls="collapseTeam1">
+                            Show Stats
+                        </button>
+                        <div class="collapse mt-2" id="collapseTeam1">
+                            <div class="card card-body bg-light text-dark">
+                                <p>#1 team individual stats content goes here. Placeholder content for demonstration purposes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col border-3 border-white shadow bg-dark-subtle">
-                <h3>#1 Team Stats</h3>
-                <p>#1 team individual stats</p>
-    
-            </div>
-            <div class="col border-3 border-white shadow bg-dark-subtle">
-                <h3>#1 Team Player Stats</h3>
-                <p>#1 team individual player stats</p>
-    
+
+            <div class="col">
+                <div class="card custom-bg text-white">
+                    <div class="card-header">
+                        <h3>#1 Team Player Stats</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Click to view #1 team player stats.</p>
+                        <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTeam1Players" aria-expanded="false" aria-controls="collapseTeam1Players">
+                            Show Stats
+                        </button>
+                        <div class="collapse mt-2" id="collapseTeam1Players">
+                            <div class="card card-body bg-light text-dark">
+                                <p>#1 team individual player stats content goes here. Placeholder content for demonstration purposes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <div class="container bg-body-tertiary">
-        idea for the pages are to have an accordian style dropdown with quick stats displayed for top teams in a grid. when clicking on a grid they will be a dropdown thats a list with stats.
-    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 <%- include("reusables/footer"); -%>
