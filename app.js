@@ -9,14 +9,14 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static("public"))
 app.use('/public', express.static('public'));
 
-const port = 4000
+const port = 5500
 
 app.get('/', (req, res) => {
 res.render('home', {name: 'no'});
 })
 
 app.get('/nfl', (req, res) => {
-  res.render('nfl', {name: 'no'});
+  res.render('nfl', {name: 'nfl'});
 })
 
 app.get('/nba', (req, res) => {

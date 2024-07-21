@@ -1,4 +1,38 @@
 <%- include("reusables/header"); -%>
 <h1>My nfl is <%= name %></h1>
-<%- include ("reusables/search"); -%>
+<body>
+    <%- include ("reusables/search"); -%>
+
+    <div
+        class="container my-1"
+        
+    >
+        <div class="row row-cols-2 g-2 g-lg-3">
+
+            <div class="col border-3 border-white shadow bg-dark-subtle gx-1">
+                <h3>All Team Stats</h3>
+                <p>hello</p>
+            </div>
+            <div class="col border-3 border-white shadow bg-dark-subtle gx-1">
+                <h3>Top Player Stats</h3>
+                <p>where the top player stats will go</p>
+    
+            </div>
+            <div class="col border-3 border-white shadow bg-dark-subtle">
+                <h3>#1 Team Stats</h3>
+                <p>#1 team individual stats</p>
+    
+            </div>
+            <div class="col border-3 border-white shadow bg-dark-subtle">
+                <h3>#1 Team Player Stats</h3>
+                <p>#1 team individual player stats</p>
+    
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <div class="container bg-body-tertiary">
+        idea for the pages are to have an accordian style dropdown with quick stats displayed for top teams in a grid. when clicking on a grid they will be a dropdown thats a list with stats.
+    </div>
+</body>
 <%- include("reusables/footer"); -%>
