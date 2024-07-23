@@ -1,10 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-// saving the top 3 most recent news events per interval
-const mlb_news = new Schema({
-    recent_three: Array
-})
 
+// TODO: fix stats api and add to schema per document entry
 const MLB = new Schema({
     news: Array,
     top_team_stats: Array,
