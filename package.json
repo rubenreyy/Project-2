@@ -1,19 +1,26 @@
 {
   "name": "project-2",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "watch": "nodemon app.js -e ejs,js"
+    "start": "node app.js",
+    "server": "nodemon app.js -e ejs,js",
+    "dev": "nodemon app.js -e ejs,js",
+    "db": "nodemon src/mongoAtlas_modules.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.7.2",
     "body-parser": "^1.20.2",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
+    "mongodb": "^6.8.0",
+    "mongoose": "^8.5.1",
     "nodemon": "^3.1.4",
+    "vercel": "^35.1.0",
     "watch": "^1.0.2"
   },
-  "description": ""
+  "description": "- by Chris Nastasi, Ruben Reyes, & David Abundis"
 }
