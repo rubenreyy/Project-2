@@ -8,14 +8,14 @@ const mongoose = require("mongoose");
 
 
 // Mock function to fetch stats, replace with actual database or API calls
-// const fetchStats = (league) => {
-//   return {
-//       allTeams: `${league} All Team Stats`,
-//       topPlayers: `${league} Top Player Stats`,
-//       team1: `${league} #1 Team Stats`,
-//       team1Players: `${league} #1 Team Player Stats`
-//   };
-// };
+const fetchStats = (league) => {
+  return {
+      allTeams: `${league} All Team Stats`,
+      topPlayers: `${league} Top Player Stats`,
+      team1: `${league} #1 Team Stats`,
+      team1Players: `${league} #1 Team Player Stats`
+  };
+};
 
 // if api fails then falls back on placeholders
 const placeholderNews = [
