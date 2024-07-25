@@ -1,11 +1,8 @@
 const express = require('express')
 const bodyParser = require("body-parser")
 const ejs = require('ejs')
-// const espn_api = require('./src/Espn_apis/get_news')
-const get_news_stored = require("./src/database_fetch/db_get_news")
 const mongoose = require("mongoose");
-const { modelName } = require('./models/news_db');
-
+const db_fetch = require("./src/database_fetch/db_get_news")
 
 
 // Mock function to fetch stats, replace with actual database or API calls
@@ -34,13 +31,13 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static(__dirname + "/public/"))
 app.use('/public', express.static('public'));
 
-// const port = 5500
+const port = 5500
 
 
 app.get('/', async (req, res) => {
   // connects to atlas db and find newest news cycle
   let news = await mongoose.model("NEWS")
-  let newest_update = await news.findOne()
+  let newest_update = await news.findOne().sort({_id:-1})
   // assigning sports to specific variable
   let nfl = newest_update.nfl;let nba = newest_update.nba;let mlb = newest_update.mlb
 
@@ -53,6 +50,7 @@ app.get('/', async (req, res) => {
     
   }
   console.log(nfl_news)
+  mongoose.connection.close()
   try {
       const nflNews = nfl_news;
       const nbaNews = nba_news;
@@ -67,7 +65,6 @@ app.get('/', async (req, res) => {
       // res.status(500).send('Error fetching news data');
       console.log(error)
     }
-
 });
 
 app.get('/nfl', (req, res) => {
@@ -91,8 +88,13 @@ app.get('/search', (req, res) => {
   res.json({ results });
 });
 
-// app.listen(port, () => {
-//   console.log(`Example app listening on port ${port}`)
-// })
+// for dev purposes on local machine
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
 
-module.exports = app;
+if (require.main == module){
+  console.log("main function")
+}
+
+// module.exports = app;

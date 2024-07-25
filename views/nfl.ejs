@@ -43,6 +43,16 @@
                         <div class="collapse mt-2" id="collapseTopPlayers">
                             <div class="card card-body bg-light text-dark">
                                 <p>Top player stats content goes here. Placeholder content for demonstration purposes.</p>
+                                <table class="table table-striped-columns">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>stats</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Passing</th>
+                                        <td>Mahomes</td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -60,8 +70,28 @@
                             Show Stats
                         </button>
                         <div class="collapse mt-2" id="collapseTeam1">
-                            <div class="card card-body bg-light text-dark">
-                                <p>#1 team individual stats content goes here. Placeholder content for demonstration purposes.</p>
+                            <div class="card card-body bg-body-tertiary text-dark">
+                                <table class="table table-bordered table-responsive table-hover table-striped-columns align-middle ">
+                                    <thead>
+                                        <tr>
+                                            <th>Team</th>
+                                            <th>Win</th>
+                                            <th>Loss</th>
+                                            <th>Tie</th>
+                                            <th>PCT</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="table-group-divider">
+                                        <tr>
+                                            <!-- implement the for loop here -->
+                                            <td>Chiefs</td>
+                                            <td>11</td>
+                                            <td>6</td>
+                                            <td>0</td>
+                                            <td>.54</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -80,7 +110,25 @@
                         </button>
                         <div class="collapse mt-2" id="collapseTeam1Players">
                             <div class="card card-body bg-light text-dark">
-                                <p>#1 team individual player stats content goes here. Placeholder content for demonstration purposes.</p>
+                                <table class="table table-striped-columns">
+                                    <thead>
+                                        <th>Position</th>
+                                        <th>Name</th>
+                                        <th>Total</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>Offense</th>
+                                            <td>Pname</td>
+                                            <td>yards</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Defense</th>
+                                            <td>pname</td>
+                                            <td>tackles</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

@@ -7,7 +7,7 @@ const dburi = "mongodb+srv://cn:12345web@web-dev-db.fhkedej.mongodb.net/?retryWr
 const News = new Schema({
     nfl: Array,
     mlb: Array,
-    nba: Array
+    nba: Array,
 })
 
 
