@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const EPSN_API = require("../../src/Espn_apis/get_news")
 
 const Top_Players = new Schema({
     offensive: {
@@ -32,5 +31,6 @@ const Top_Players = new Schema({
         },
     }
 })
+// feeds into the mlb page database document
 
 module.exports = mongoose.model("MLB_Top_Players",Top_Players)

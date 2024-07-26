@@ -32,5 +32,6 @@ const Top_Players = new Schema({
         },
     }
 })
+// feeds into the nba page database document
 
 module.export = mongoose.model("NBA_Top_Players",Top_Players)

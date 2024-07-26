@@ -23,7 +23,25 @@
                         </button>
                         <div class="collapse mt-2" id="collapseAllTeams">
                             <div class="card card-body bg-light text-dark">
-                                <p>All team stats content goes here. Placeholder content for demonstration purposes.</p>
+                                 <table class="table table-striped-columns">
+                                    <thead>
+                                        <th>Team</th>
+                                        <th>W</th>
+                                        <th>L</th>
+                                        <th>W.PCT</th>
+                                    </thead>
+                                    <tbody>
+                                        
+                                        <% temp_all_teams.forEach(function(team) { %>
+                                            <tr>
+                                                <td><%= team.team_name %></td>
+                                                <td><%= team.team_record.wins %></td>
+                                                <td><%= team.team_record.losses %></td>
+                                                <td><%= team.team_record.alt %></td>
+                                            </tr>
+                                            <% }) %>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -42,7 +60,49 @@
                         </button>
                         <div class="collapse mt-2" id="collapseTopPlayers">
                             <div class="card card-body bg-light text-dark">
-                                <p>Top player stats content goes here. Placeholder content for demonstration purposes.</p>
+                                   <table class="table table-striped-columns">
+                                    <tr>
+                                        <th>Stat</th>
+                                        <th>Name</th>
+                                        <th>Points</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Points</th>
+                                        <td><%= temp_top_players.offensive.points.name %></td>
+                                        <td><%= temp_top_players.offensive.points.pts %></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Assists</th>
+                                        <td><%= temp_top_players.offensive.assists.name %></td>
+                                        <td><%= temp_top_players.offensive.assists.ast %></td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>Three Pointers</th>
+                                        <td><%= temp_top_players.offensive.threepointersmade.name %></td>
+                                        <td><%= temp_top_players.offensive.threepointersmade.threepointers %></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <th>Rebounds</th>
+                                        <td><%= temp_top_players.defensive.rebounds.name %></td>
+                                        <td><%= temp_top_players.defensive.rebounds.reb %></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <th>Blocks</th>
+                                        <td><%= temp_top_players.defensive.blocks.name %></td>
+                                        <td><%= temp_top_players.defensive.blocks.blk %></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <th>Steals</th>
+                                        <td><%= temp_top_players.defensive.steals.name %></td>
+                                        <td><%= temp_top_players.defensive.steals.stl %></td>
+                                        
+                                    </tr>
+
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -61,7 +121,25 @@
                         </button>
                         <div class="collapse mt-2" id="collapseTeam1">
                             <div class="card card-body bg-light text-dark">
-                                <p>#1 team individual stats content goes here. Placeholder content for demonstration purposes.</p>
+                                 <table class="table table-bordered table-responsive table-hover table-striped-columns align-middle ">
+                                    <thead>
+                                        <tr>
+                                            <th>Team</th>
+                                            <th>Win</th>
+                                            <th>Loss</th>
+                                            <th>PCT</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="table-group-divider">
+                                        <tr>
+                                            <!-- implement the for loop here -->
+                                            <td><%= temp_top_team_stats.team_name %></td>
+                                            <td><%= temp_top_team_stats.team_record.wins %></td>
+                                            <td><%= temp_top_team_stats.team_record.losses %></td>
+                                            <td><%= temp_top_team_stats.team_record.alt %></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -80,7 +158,26 @@
                         </button>
                         <div class="collapse mt-2" id="collapseTeam1Players">
                             <div class="card card-body bg-light text-dark">
-                                <p>#1 team individual player stats content goes here. Placeholder content for demonstration purposes.</p>
+                                <!-- <p>#1 team individual player stats content goes here. Placeholder content for demonstration purposes.</p> -->
+                                <table class="table table-striped-columns">
+                                    <thead>
+                                        <th>Position</th>
+                                        <th>Name</th>
+                                        <th>Total</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>Offense</th>
+                                            <td class="text-dark"><%= temp_team_player_stats.offense[0] %></td>
+                                            <td><%= temp_team_player_stats.offense[1] %></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Defense</th>
+                                            <td><%= temp_team_player_stats.defense[0] %></td>
+                                            <td><%= temp_team_player_stats.defense[1] %></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

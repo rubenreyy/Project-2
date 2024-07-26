@@ -15,7 +15,8 @@ async function get_all_teams() {
     return all_teams
 }
 // parses name and id out of fetch
-let get_teams_and_id = async () => {
+async function get_teams_and_id(){
+// let get_teams_and_id = async () => {
     let response = await get_all_teams()
     let sport_id_name = []
     for (let r_items = 0; r_items < response.length; r_items++) {
@@ -27,6 +28,8 @@ let get_teams_and_id = async () => {
 }    
     return sport_id_name
 }
+
+
 
 
 async function main(){

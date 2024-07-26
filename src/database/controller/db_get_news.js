@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const news_updates = require("../../Espn_apis/get_news")
+const news_updates = require("../../Espn_apis/fetch_wrapper")
 const NEWS = require("../../../models/news_db")
 const NFL = require("../../../models/nfl_page_db")
 const MLB = require("../../models/mlb_db")
@@ -25,30 +25,14 @@ async function update_news() {
 
 async function add_to_db(){
     let updates = await update_news()
-    const updating = await NEWS.create({nfl: updates.nfl,mlb: updates.mlb,nba: updates.nba})
+    const updating = await NEWS.findOneAndUpdate({nfl: updates.nfl,mlb: updates.mlb,nba: updates.nba})
     console.log("update news successful")
-    const update_nfl = await NFL.create({mlb})
-    const update_mlb = await MLB.create()
-    const update_nba = await NBA.create()
     console.log(updating)
 }
 
-async function deletem() {
-    const deleting = await NEWS.deleteMany()
-    console.log(deleting)
-}
-
-
 
 async function main_function(){
-    // update news and add to database
-    // await add_to_db()
-
-    // shows most recent entry
-    // await get_top()
-    
-    // delete DB
-    // await deletem()
+  
 }
 
 if (require.main == module){

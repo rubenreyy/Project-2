@@ -2,11 +2,12 @@ const express = require('express')
 const bodyParser = require("body-parser")
 const ejs = require('ejs')
 const mongoose = require("mongoose");
-const db_fetch = require("./src/database_fetch/db_get_news")
-const auto_update = require("./src/Espn_apis/fetch_wrapper")
+const auto_update = require("./src/database/controller/update_db_page")
 
 // starts autoupdater for new information from api
-auto_update()
+const dburi = "mongodb+srv://cn:12345web@web-dev-db.fhkedej.mongodb.net/?retryWrites=true&w=majority&appName=web-dev-db"
+mongoose.connect(dburi).then(() => console.log("connected"))
+// auto_update.start_auto_update()
 
 // Mock function to fetch stats, replace with actual database or API calls
 const fetchStats = (league) => {
@@ -53,7 +54,6 @@ app.get('/', async (req, res) => {
     
   }
   console.log(nfl_news)
-  mongoose.connection.close()
   try {
       const nflNews = nfl_news;
       const nbaNews = nba_news;
@@ -70,21 +70,61 @@ app.get('/', async (req, res) => {
     }
 });
 
-app.get('/nfl', (req, res) => {
+app.get('/nfl', async (req, res) => {
   const stats = fetchStats('NFL');
-  res.render('nfl', { stats });
+  try {
+    let nfl = await mongoose.model("NFL_DB")
+    let new_page = await nfl.findOne().sort({_id:1})
+    console.log(new_page)
+    let temp_team_player_stats = new_page.top_team_player_stats // make sure to update whole array is added
+    let temp_top_team_stats = new_page.top_team_stats
+    let temp_top_players = new_page.top_player_stats[0]
+    let temp_all_teams = new_page.all_team_stats
+    res.render('nfl', { stats , temp_team_player_stats,temp_top_team_stats,temp_top_players,temp_all_teams});
+  } catch (error) {
+    console.log(error)
+    res.redirect("/")
+  }
 });
 
-app.get('/nba', (req, res) => {
+app.get('/nba', async (req, res) => {
   const stats = fetchStats('NBA');
-  res.render('nba', { stats });
+  try {
+    let nba = await mongoose.model("NBA")
+    let new_page = await nba.findOne().sort({_id:1})
+    console.log(new_page)
+    let temp_team_player_stats = new_page.top_team_players_stats // make sure to update whole array is added
+    let temp_top_team_stats = new_page.top_team
+    let temp_top_players = new_page.top_players
+    let temp_all_teams = new_page.all_team_stats
+    console.log(new_page.temp_team_players_stats)
+    res.render('nba', { stats ,temp_team_player_stats,temp_top_team_stats,temp_top_players,temp_all_teams});
+  } catch (error) {
+    console.log(error)
+    res.redirect("/")
+  }
 });
 
-app.get('/mlb', (req, res) => {
+app.get('/mlb', async (req, res) => {
   const stats = fetchStats('MLB');
-  res.render('mlb', { stats });
+  try {
+    let MLB = await mongoose.model("MLB")
+    let new_page = await MLB.findOne().sort({_id:1})
+    console.log(new_page)
+    let temp_team_player_stats = new_page.top_team_player_stats // make sure to update whole array is added
+    let temp_top_team_stats = new_page.top_team_stats
+    let temp_top_players = new_page.top_player_stats
+    let temp_all_teams = new_page.all_team_stats
+    res.render('mlb', { stats, temp_team_player_stats,temp_top_team_stats,temp_top_players ,temp_all_teams});
+    
+  } catch (error) {
+    console.log(error)
+    res.redirect("/")
+  }
 });
 
+
+// not implemented yet
 app.get('/search', (req, res) => {
   const query = req.query.q.toLowerCase();
   const results = db.filter(item => item.includes(query));
@@ -100,4 +140,4 @@ if (require.main == module){
   console.log("main function")
 }
 
-// module.exports = app;
+module.exports = app;

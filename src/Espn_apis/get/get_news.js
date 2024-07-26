@@ -40,12 +40,13 @@ let new_fetch = async () => {
 }
 
 // function to test script
-async function test_func() {
+async function main() {
     let news_data = await new_fetch()
     console.log(Object.keys(news_data))
-    
 }
-// test_func()
+if (require.main == module){
+    main()
+}
 
 
 module.exports = {

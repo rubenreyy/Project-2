@@ -7,8 +7,8 @@ const single_team_records = new Schema({
     team_record: {
         wins: Number,
         losses: Number,
-        ties: Number
+        alt: Number
     }
 })
 
-module.export
+module.exports = mongoose.model("STR",single_team_records)
