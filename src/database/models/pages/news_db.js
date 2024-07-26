@@ -8,7 +8,7 @@ const News = new Schema({
     nfl: Array,
     mlb: Array,
     nba: Array,
-})
+}, {timestamps : true})
 
 
 module.exports = mongoose.model("NEWS",News)

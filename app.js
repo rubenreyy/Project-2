@@ -3,7 +3,10 @@ const bodyParser = require("body-parser")
 const ejs = require('ejs')
 const mongoose = require("mongoose");
 const db_fetch = require("./src/database_fetch/db_get_news")
+const auto_update = require("./src/Espn_apis/fetch_wrapper")
 
+// starts autoupdater for new information from api
+auto_update()
 
 // Mock function to fetch stats, replace with actual database or API calls
 const fetchStats = (league) => {

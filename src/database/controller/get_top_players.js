@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
-const TOP_NFL = require("../../models/athletes/nfl_top_players")
+const TOP_NFL = require("../../../models/athletes/nfl_top_players")
 // const TOP_NBA = require("../../models/nba_top_players")
-const TOP_MLB = require("../../models/athletes/mlb_top_players")
-const get_new_stats = require("../Espn_apis/get_stats")
+const TOP_MLB = require("../../../models/athletes/mlb_top_players")
+const get_new_stats = require("../../Espn_apis/get_stats")
 
 const dburi = "mongodb+srv://cn:12345web@web-dev-db.fhkedej.mongodb.net/?retryWrites=true&w=majority&appName=web-dev-db"
 
@@ -10,8 +10,6 @@ mongoose.connect(dburi).then(() => console.log("connected"))
 
 
 // top team players
-
-
 
 async function add_top_players() {
     let update =  await get_new_stats.fetch_top_sport_player("football","nfl","2023")

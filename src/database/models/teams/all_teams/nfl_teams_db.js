@@ -11,6 +11,11 @@ const Schema = mongoose.Schema;
 const NFL_teams = new Schema({
     team_id: Number,
     team_name: String,
+    record : {
+        wins : Number,
+        losses : Number,
+        ties : Number 
+    }
 })
 
 

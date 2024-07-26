@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 const NFL = require("../../models/nfl_db")
 const MLB = require("../../models/mlb_db")
 const NBA = require("../../models/nba_db")
-const NEWS = require("../../models/news_db")
+const NEWS = require("../../../models/news_db")
 
 
 const dburi = "mongodb+srv://cn:12345web@web-dev-db.fhkedej.mongodb.net/?retryWrites=true&w=majority&appName=web-dev-db"

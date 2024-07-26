@@ -8,6 +8,6 @@ const NBA = new Schema({
     team_stats: Array,
     top_team_stats: Array,
     top_team_player_stats: Array
-})
+}, {timestamps : true})
 
 module.exports = mongoose.model("NBA", NBA)

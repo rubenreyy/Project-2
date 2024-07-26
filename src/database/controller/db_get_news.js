@@ -1,10 +1,11 @@
 const mongoose = require("mongoose")
-const news_updates = require("../Espn_apis/get_news")
-const NEWS = require("../../models/news_db")
-const NFL = require("../../models/nfl_db")
+const news_updates = require("../../Espn_apis/get_news")
+const NEWS = require("../../../models/news_db")
+const NFL = require("../../../models/nfl_page_db")
 const MLB = require("../../models/mlb_db")
 const NBA = require("../../models/nba_db")
 const Schema = mongoose.Schema;
+
 
 const dburi = "mongodb+srv://cn:12345web@web-dev-db.fhkedej.mongodb.net/?retryWrites=true&w=majority&appName=web-dev-db"
 

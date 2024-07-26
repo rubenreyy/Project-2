@@ -1,9 +1,9 @@
 const mongoose = require("mongoose")
-const get_teams_api = require("../Espn_apis/get_teams")
-const get_stats = require("../Espn_apis/get_stats")
-const NFL_T = require("../../models/teams/nfl_teams_db")
-const MLB_T = require("../../models/teams/mlb_teams_db")
-const NBA_T = require("../../models/teams/nba_teams_db")
+const get_teams_api = require("../../Espn_apis/get_teams")
+const get_stats = require("../../Espn_apis/get_stats")
+const NFL_T = require("../../../models/teams/nfl_teams_db")
+const MLB_T = require("../../../models/teams/mlb_teams_db")
+const NBA_T = require("../../../models/teams/nba_teams_db")
 const Schema = mongoose.Schema;
 
 const dburi = "mongodb+srv://cn:12345web@web-dev-db.fhkedej.mongodb.net/?retryWrites=true&w=majority&appName=web-dev-db"
