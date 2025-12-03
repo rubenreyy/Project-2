@@ -14,7 +14,7 @@
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "nodemon": "^3.1.4",
-    "watch": "^1.0.2"
+    "watch": "^0.13.0"
   },
   "description": "- by Chris Nastasi, Ruben Reyes, & David Abundis"
 }
